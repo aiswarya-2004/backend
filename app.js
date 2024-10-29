@@ -4,14 +4,20 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./db/mongodb');
 var cors = require('cors')
-
+var hello = "sfdsa"
 
 var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
+const { access } = require('fs');
 
 var app = express();
 
-app.use(cors())
+const corsOptions = {
+    origin: 'http://localhost/3000',
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
