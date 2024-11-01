@@ -12,10 +12,10 @@ const { access } = require('fs');
 
 var app = express();
 
-const corsOptions = {
-    origin: 'http://localhost/3000',
-    optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//     origin: 'http://localhost/3000',
+//     optionsSuccessStatus: 200,
+// };
 
 app.use(cors());
 app.use(logger('dev'));
